@@ -1729,13 +1729,6 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
 var setPublicPath = __webpack_require__("1eb2");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6629ab1e-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueDisqusCount.vue?vue&type=template&id=7c36e9b3&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('span',{staticClass:"disqus-comment-count",attrs:{"data-disqus-identifier":_vm.identifier,"data-disqus-url":_vm.url}})}
-var staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/VueDisqusCount.vue?vue&type=template&id=7c36e9b3&
-
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.iterator.js
 var es6_array_iterator = __webpack_require__("cadf");
 
@@ -1744,6 +1737,13 @@ var es6_promise = __webpack_require__("551c");
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es7.promise.finally.js
 var es7_promise_finally = __webpack_require__("097d");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6629ab1e-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueDisqusCount.vue?vue&type=template&id=7c36e9b3&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('span',{staticClass:"disqus-comment-count",attrs:{"data-disqus-identifier":_vm.identifier,"data-disqus-url":_vm.url}})}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/VueDisqusCount.vue?vue&type=template&id=7c36e9b3&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueDisqusCount.vue?vue&type=script&lang=js&
 
@@ -1909,6 +1909,9 @@ component.options.__file = "VueDisqusCount.vue"
 /* harmony default export */ var VueDisqusCount = (component.exports);
 // CONCATENATED MODULE: ./src/js/VueDisqusCount.js
 
+
+
+
 var queued = false;
 /* harmony default export */ var js_VueDisqusCount = ({
   install: function install(Vue, options) {
@@ -1919,25 +1922,25 @@ var queued = false;
     Vue.prototype.$disqus_count = {
       shortname: options.shortname,
       load: function load() {
-        if (window.DISQUS && window.document.getElementById('dsq-count-scr')) {
-          if (!queued) {
-            queued = true;
-            Vue.nextTick(function () {
-              if (window.DISQUSWIDGETS) {
-                window.DISQUSWIDGETS.getCount({
-                  reset: true
-                });
-              }
+        var _this = this;
 
-              queued = false;
-            });
-          }
-        } else {
-          var script = window.document.createElement('script');
-          script.async = true;
-          script.src = "https://".concat(this.shortname, ".disqus.com/count.js");
-          script.id = 'dsq-count-scr';
-          window.document.body.appendChild(script);
+        if (!queued) {
+          queued = true;
+          Vue.nextTick(function () {
+            if (window.DISQUSWIDGETS && window.document.getElementById('dsq-count-scr')) {
+              window.DISQUSWIDGETS.getCount({
+                reset: true
+              });
+            } else {
+              var script = window.document.createElement('script');
+              script.async = true;
+              script.src = "https://".concat(_this.shortname, ".disqus.com/count.js");
+              script.id = 'dsq-count-scr';
+              window.document.body.appendChild(script);
+            }
+
+            queued = false;
+          });
         }
       }
     };

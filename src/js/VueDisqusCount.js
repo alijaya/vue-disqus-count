@@ -12,22 +12,20 @@ export default {
     Vue.prototype.$disqus_count = {
       shortname: options.shortname,
       load () {
-        if (window.DISQUS && window.document.getElementById('dsq-count-scr')) {
-          if (!queued) {
-            queued = true
-            Vue.nextTick(() => {
-              if (window.DISQUSWIDGETS) {
-                window.DISQUSWIDGETS.getCount({ reset: true })
-              }
-              queued = false
-            })
-          }
-        } else {
-          const script = window.document.createElement('script')
-          script.async = true
-          script.src = `https://${this.shortname}.disqus.com/count.js`
-          script.id = 'dsq-count-scr'
-          window.document.body.appendChild(script)
+        if (!queued) {
+          queued = true
+          Vue.nextTick(() => {
+            if (window.DISQUSWIDGETS && window.document.getElementById('dsq-count-scr')) {
+              window.DISQUSWIDGETS.getCount({ reset: true })
+            } else {
+              const script = window.document.createElement('script')
+              script.async = true
+              script.src = `https://${this.shortname}.disqus.com/count.js`
+              script.id = 'dsq-count-scr'
+              window.document.body.appendChild(script)
+            }
+            queued = false
+          })
         }
       }
     }
