@@ -66,4 +66,8 @@ a {
   color: teal;
   margin: 1rem;
 }
+
+.github-corner {
+  display: block;
+}
 </style>
