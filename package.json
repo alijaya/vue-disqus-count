@@ -1,6 +1,6 @@
 {
   "name": "vue-disqus-count",
-  "description": "Vue Plugin for add Disqus comment count.",
+  "description": "Vue Plugin for embedding Disqus comment count.",
   "author": "Ali Jaya Meilio Lie <alijayameilio@gmail.com>",
   "license": "MIT",
   "main": "./src/js/VueDisqusCount.js",
