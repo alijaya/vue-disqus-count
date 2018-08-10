@@ -1,8 +1,29 @@
 {
   "name": "vue-disqus-count",
+  "description": "Vue Plugin for add Disqus comment count.",
+  "author": "Ali Jaya Meilio Lie <alijayameilio@gmail.com>",
+  "license": "MIT",
+  "main": "./src/js/VueDisqusCount.js",
+  "files": [
+    "dist/*",
+    "src/components/*",
+    "src/js/*"
+  ],
+  "repository": "github:alijaya/vue-disqus-count",
+  "homepage": "https://alijaya.github.io/vue-disqus-count",
+  "bugs": "https://github.com/alijaya/vue-disqus-count/issues",
+  "keywords": [
+    "vue",
+    "plugin",
+    "component",
+    "embed",
+    "disqus",
+    "discussion",
+    "comment"
+  ],
   "version": "0.1.0",
-  "private": true,
   "scripts": {
+    "build-bundle": "vue-cli-service build --dest dist --target lib --name VueDisqusCount ./src/js/VueDisqusCount.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -14,6 +35,7 @@
     "@vue/cli-plugin-babel": "^3.0.0-rc.12",
     "@vue/cli-plugin-eslint": "^3.0.0-rc.12",
     "@vue/cli-service": "^3.0.0-rc.12",
+    "vue-gh-corners": "^2.0.0",
     "vue-template-compiler": "^2.5.17"
   },
   "eslintConfig": {
