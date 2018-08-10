@@ -1,4 +1,4 @@
-import VueDisqusCount from '@/components/VueDisqusCount'
+import VueDisqusCount from '../components/VueDisqusCount'
 
 let queued = false
 
