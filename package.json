@@ -21,7 +21,7 @@
     "discussion",
     "comment"
   ],
-  "version": "0.1.0",
+  "version": "1.0.0",
   "scripts": {
     "build-bundle": "vue-cli-service build --dest dist --target lib --name VueDisqusCount ./src/js/VueDisqusCount.js",
     "serve": "vue-cli-service serve",
